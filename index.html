@@ -4,143 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Простая страница</title>
-    <style>
-        /* Сброс стилей */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f0f2f5;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Шапка */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Контейнер */
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-            flex: 1;
-        }
-
-        /* Карточки */
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
-
-        .card h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        .card p {
-            margin-bottom: 1rem;
-            color: #555;
-        }
-
-        /* Кнопка */
-        .btn {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 0.7rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.2s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn:hover {
-            background: #5a67d8;
-            transform: scale(1.04);
-        }
-
-        /* Сетка для карточек */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .grid .card {
-            margin-bottom: 0;
-        }
-
-        /* Подвал */
-        footer {
-            background: #2d3748;
-            color: #cbd5e0;
-            text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 2rem;
-        }
-
-        footer a {
-            color: #a0aec0;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-
-            .card {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -163,7 +27,7 @@
             <p>
                 Вы можете использовать этот шаблон как основу для своих проектов.
             </p>
-            <a href="#" class="btn">Узнать больше</a>
+            <button class="btn" id="moreBtn">Узнать больше</button>
         </section>
 
         <!-- Сетка карточек -->
@@ -190,9 +54,21 @@
             </p>
             <p>
                 Или в социальных сетях:
-                <a href="#" style="color: #667eea; text-decoration: none; margin: 0 0.3rem;">Twitter</a> ·
-                <a href="#" style="color: #667eea; text-decoration: none; margin: 0 0.3rem;">GitHub</a> ·
-                <a href="#" style="color: #667eea; text-decoration: none; margin: 0 0.3rem;">Telegram</a>
+                <a href="#" class="social-link">Twitter</a> ·
+                <a href="#" class="social-link">GitHub</a> ·
+                <a href="#" class="social-link">Telegram</a>
+            </p>
+        </section>
+
+        <!-- Скрытая секция, которая появится по клику -->
+        <section class="card hidden" id="extraInfo">
+            <h2>🎉 Секретная информация</h2>
+            <p>
+                Поздравляем! Вы нашли скрытую секцию. Она была спрятана с помощью CSS,
+                а теперь показана благодаря JavaScript.
+            </p>
+            <p>
+                Текущее время: <strong id="currentTime"></strong>
             </p>
         </section>
 
@@ -201,12 +77,13 @@
     <!-- Подвал -->
     <footer>
         <p>
-            &copy; 2026 Простая страница. Сделано с ❤️
+            &copy; <span id="year"></span> Простая страница. Сделано с ❤️
             <br>
             <a href="#">Политика конфиденциальности</a> ·
             <a href="#">Условия использования</a>
         </p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
