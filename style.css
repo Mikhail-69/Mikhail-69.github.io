@@ -220,3 +220,59 @@ footer a:hover {
         text-align: center;
     }
 }
+/* ===========================
+   Навигация и списки ссылок
+   =========================== */
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.site-nav a {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+    background: rgba(255, 255, 255, 0.32);
+}
+
+.link-list {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.link-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.link-list li:last-child {
+    border-bottom: none;
+}
+
+.link-list a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.link-list a:hover {
+    text-decoration: underline;
+}
+
+code {
+    background: rgba(102, 126, 234, 0.1);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
